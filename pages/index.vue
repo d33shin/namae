@@ -1,30 +1,21 @@
 <template lang="pug">
-  div
-    ul
-      li(
-        v-for='vid in vids'
-        :key='vid.title'
-      ) {{ vid.snippet }}
-        v-img(:src='require(`@/assets/images/${vid.cards[1].image}?resize&size=1000&format=webp`)')
+  v-container
+    h1 남애항식당에 오심을 환영합니다
+    
+      
 </template>
 
 <script>
-var { mapState } = require("vuex");
-
 module.exports = {
   head() {
     return {
-      title: this.title
+      title: this.title,
     };
   },
   data() {
     return {
-      title: "Proposal for surfing and leisure business",
-      msg: "This is the message from data..."
+      title: "남애항식당에 오심을 환영합니다",
     };
   },
-  computed: {
-    ...mapState(["vids"])
-  }
 };
 </script>

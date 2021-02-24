@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav
+  nav(class='scroll-y')
 
     v-navigation-drawer(v-model="drawer" app)
       v-list-item
@@ -18,6 +18,8 @@
 
 
     v-app-bar(app color='blue-grey darken-4' flat)
+     
+        
       v-app-bar-nav-icon(
         color="pink"
         @click="drawer = !drawer"
@@ -34,11 +36,19 @@ export default {
     drawer: false,
     items: [
       { title: "홈", icon: "mdi-star-face", to: "/" },
-      { title: "메뉴", icon: "mdi-book-open", to: "/메뉴" },
-      { title: "예약", icon: "mdi-phone", to: "/예약" },
       { title: "오시는길", icon: "mdi-map-marker-radius", to: "/오시는길" }
     ],
     right: null
-  })
+  }),
+  methods: {
+    onScroll(e) {
+      if (typeof window === "undefined") return;
+      const top = window.pageYOffset || e.target.scrollTop || 0;
+      this.fab = top > 20;
+    },
+    toTop() {
+      this.$vuetify.goTo(0);
+    }
+  }
 };
 </script>

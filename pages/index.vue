@@ -1,9 +1,9 @@
 <template lang="pug">
   v-container
     div(class='mb-12')
-
-      p {{ description }}
-      p 영업시간은 오전 9시 부터 오후 10까지입니다.
+      h2(class='text-h4 my-12') 남애항 정육식당 &amp; 치킨
+      div(class='text-h6')
+        p 영업시간은 오전 9시 부터 오후 10까지입니다.
       p(class='text-h5 font-weight-') 문의 🤙 010 4490 5566
 
     v-divider(class='my-12')
@@ -105,7 +105,6 @@ module.exports = {
   data() {
     return {
       title: "남애항 정육식당 & 치킨",
-      description: "남애항 정육식당 & 치킨의 메뉴입니다.",
     };
   },
 };
